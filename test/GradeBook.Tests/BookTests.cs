@@ -5,8 +5,6 @@ namespace GradeBook.Tests
 {
     public class BookTests
     {
-        //Fact is an attribute that indicates a unit test
-        //xunit will only invoke methods with [fact] before it
         [Fact]
         public void BookCalculatesAnAverageGrade()
         {
@@ -24,18 +22,6 @@ namespace GradeBook.Tests
             Assert.Equal(90.5, result.High, 1);
             Assert.Equal(77.3, result.Low, 1);
             Assert.Equal('B', result.Letter);
-        }
-
-        [Fact]
-
-        public void GradesOutsideRangeShouldNotBeAdded()
-        {
-            var book = new Book("");
-            
-            book.AddGrade(105);
-            var result = book.GetStatistics();
-
-            Assert.NotEqual(105, result.Average);
         }
     }
 }
